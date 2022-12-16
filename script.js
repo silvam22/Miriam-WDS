@@ -9,19 +9,19 @@ $(function () {
 
   // function to get the current date and show up in the header
   function operateCurrentDate() {
-    var dateShow;
+    var dateDisplay;
     if (
       date.format("D") == 1 || date.format("D") == 21 || date.format("D") == 31)
     {
-      dateShow = date.format("dddd, MMMM D[st]");
+      dateDisplay = date.format("dddd, MMMM D[st]");
     } else if (date.format("D") == 2 || date.format("D") == 22) {
-      dateShow = date.format("dddd, MMMM D[nd]");
+      dateDisplay = date.format("dddd, MMMM D[nd]");
     } else if (date.format("D") == 3 || date.format("D") == 23) {
-      dateShow = date.format("dddd, MMMM D[rd]");
+      dateDisplay = date.format("dddd, MMMM D[rd]");
     } else {
-      dateShow = date.format("dddd, MMMM D[th]");
+      dateDisplay = date.format("dddd, MMMM D[th]");
     }
-    currentDay.text(dateShow);
+    currentDay.text(dateDisplay);
   }
 
   // function of changing the color of time-blocks based on current hour
