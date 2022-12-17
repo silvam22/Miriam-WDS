@@ -23,17 +23,21 @@ $(function () {
     }
     currentDay.text(dateDisplay);
   }
-
   // function of changing the color of time-blocks based on current hour
   function differentColorForTimeBlock() {
     for (var i = 0; i < timeBlock.length; i++) {
       var timeBlockHour = $(timeBlock[i]).attr("id").split("-")[1];
+      console.log("timeBlock", timeBlockHour)
+      console.log("currentHour",currentHour)
       if (parseInt(currentHour) > parseInt(timeBlockHour)) {
         $(timeBlock[i]).addClass("past");
+        $(timeBlock[i]).removeClass("future present");
       } else if (parseInt(currentHour) == parseInt(timeBlockHour)) {
         $(timeBlock[i]).addClass("present");
+        $(timeBlock[i]).removeClass("future past");
       } else {
         $(timeBlock[i]).addClass("future");
+        $(timeBlock[i]).removeClass("present past");
       }
     }
   }
